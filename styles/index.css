@@ -10,6 +10,9 @@
     --p: rgba(14, 13, 13, 0.932);
 }
 
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -17,69 +20,119 @@
 
 body{
     background-color: var(--cor1);
+    font-family: 'Times New Roman', Times, serif;
 }
 
+/*Correção do CSS do bootstrap*/
+h1, h2, h3, h4, h5{
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+p,a{
+    line-height: normal;
+}
+
+/*-----CABEÇALHO-----*/
 header {
-    position: relative;
     display: flex;
-    justify-content: center; 
-    align-items: center;           
+    align-items: center;
+    justify-content: center;
     background-color: var(--cor0);
     padding: 0 40px; 
     height: 70px;
 }
 
-header > h1 {
-    position: absolute;
-    left: 40px;
+header h1 {
     font-size: 2.5em;
-    padding-left: 80px;
+    margin-right: auto;
+    margin-left: 60px;
 }
 
-
-
-header > nav {
+/*-----ESTILO BASE DOS LINKS (desktop + mobile)-----*/
+header > nav{
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 50px; 
+    flex-wrap: nowrap;
+    gap: 50px;
+    flex: 1;
 }
 
-header > nav a {
+.desktop-menu{
+    margin: auto;
+}
+
+.nav-link {
     text-decoration: none;
     font-size: 1.1em;
-    color: black;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     border-top: 2px solid transparent;
     border-bottom: 2px solid transparent;
     transition: 0.5s;
+    margin: 10px;
 }
-
-nav a:hover{
+.nav-link:hover {
     color: var(--cor3);
     border-bottom-color: var(--cor3);
 }
 
-header > nav button{
-    position: absolute;
-    background-color: var(--cor3);
-    right: 120px;
-}
 
-header> nav button{
+/* Botão WhatsApp */
+.whatsapp-btn {
+    margin-left: auto;
+    margin-right: 60px;
     background-color: var(--cor2);
     color: white;
-    padding: 10px 20px;
+    padding: 10px 17px;
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 550;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
     transition: 0.5s;
+    text-decoration: none;
 }
-
-header >nav button:hover{
+.whatsapp-btn:hover {
     background-color: var(--cor4);
 }
 
+/*-----NAV MOBILE-----*/
+.navbar-custom {
+    background-color: var(--cor0);
+    height: 70px;
+}
+
+/* Responsividade */
+/* Desktop (>=1115px) */
+@media (min-width: 1115px) {
+  .desktop-menu {
+    display: flex !important;
+    gap: 20px;
+    align-items: center;
+  }
+  .navbar-toggler,
+  .offcanvas {
+    display: none !important;
+  }
+}
+
+/* Mobile (<=1114px) */
+@media (max-width: 1114px) {
+  .desktop-menu {
+    display: none !important;
+  }
+  .navbar-toggler {
+    display: block !important;
+  }
+  header h1{
+    margin: 0;
+  }
+}
 
 #container1 {
     display: flex;
@@ -87,7 +140,6 @@ header >nav button:hover{
     align-items: center; 
     height: 500px; 
     padding-left: 13%; 
-    
     background-image: url('../imagens/identidade_visual/imagembanner.jpg');
     background-size: cover;
     background-position: center;
@@ -102,17 +154,21 @@ header >nav button:hover{
     background-color: rgba(0, 0, 0, 0.45);
 }
 
-.texto-sobre-imagem {
+.texto-sobre-imagem{
     position: relative; /* mantém o texto acima do overlay */
     color: white;
     max-width: 400px;
     z-index: 1;
+    filter: brightness(100%);
+   
 }
 
 .texto-sobre-imagem h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 3.7rem;
     margin-bottom: 15px;
+    color: white;
+    font-weight: normal;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.514);
 }
 
@@ -126,13 +182,13 @@ header >nav button:hover{
 
 .botao {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 10px 25px;
     background: var(--cor3);
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
     border-radius: 30px;
-    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.171);
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.116);
     transition: background 0.3s ease;
 }
 
@@ -192,7 +248,7 @@ section#centralizador{
 .produtosdestaque > img{
     margin: 0;
     width: 300px;
-    height: 200px;
+    height: 190px;
     margin-bottom: 10px;
 }
 
@@ -235,12 +291,12 @@ section#centralizador{
 }
 
 #container3> section p:hover{
-    color: rgb(19, 18, 18);
+    color: rgb(0, 0, 0);
 }
 
 #container3 > section a{
     font-size: 1.1em;
-    padding: 12px 40px;
+    padding: 10px 40px;
 }
 
 #container3 > img {
@@ -253,41 +309,96 @@ section#centralizador{
 
 #container4{
     display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
+    justify-content: center; 
     margin: auto;
-    margin-top: 30px;
+    margin-top: 27px;
     padding: 20px;
     gap: 30px; 
     background-color: var(--cor0);
-    width: 900px;
+    max-width: 900px;
     min-height: 300px;
 }
 
 #container4 > img {
-    width: 400px;
-    height: 290px; 
+    margin-top: 50px;
+    width: 370px;
+    height: 260px; 
     border-radius: 8px; 
     object-fit: cover; 
+}
+
+#container4 > article{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 480px;
+}
+
+#container4 > article > h1{
+    font-size: 2em;
+    text-align: center;
 }
 
 
 
 
 /* Responsividade */
-@media (max-width: 820px) {
+
+@media (max-width: 1000px) {
+    #container1{
+        background-image: url('../imagens/identidade_visual/imagembanner_pequena.jpg');
+    }
+
+    .texto-sobre-imagem h1{
+        max-width: 400px;
+    }
+
+    .texto-sobre-imagem p{
+        max-width: 200px;
+    }
+}
+
+
+@media (max-width: 890px) {
+
+    #container2 > h1{
+    font-size: 1.3em;
+    }
+    #container2 > p{
+    font-size: 0.8em;
+    }
+    .produtosdestaque{
+        width: 280px;
+        height: 340px;
+        font-size: 0.9em;
+    }
+    .produtosdestaque > img{
+        width: 280px;
+        height: 180px;
+    }
+    
+
     #container3{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-size: 0.9em;
     }
-    #container3 > img{
+    #container3 > img, #container4 > img{
         margin: 0;
         text-align: center;
         width: 100%;
-        max-width: 440px;
+        max-width: 370px;
         height: auto;
     }
+
+    #container4{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9em;
+    }
+
 }
 
 

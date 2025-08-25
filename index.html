@@ -4,18 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modelo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
     <header>
-        <h1>Modelo</h1>
-        <nav>
-            <a href="">Início</a>
-            <a href="">Cardápido</a>
-            <a href="">Localização</a>
-            <a href="">Quem Somos</a>
-            <a href="">Contato</a>
-            <button>Peça no WhatsApp</button>
+        <nav class="navbar navbar-custom sticky-top px-3">
+            <!-- Logo -->
+            <h1>Modelo</h1>
+            <!-- Menu Desktop -->
+            <div class="desktop-menu">
+                <ul class="navbar-nav gap-4 flex-row">
+                    <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#container3">Localização</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#container4">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Botão WhatsApp Desktop -->
+            <a href="https://wa.me/559999999999" target="_blank" class="whatsapp-btn desktop-menu ms-3">Peça no WhatsApp</a>
+
+            <!-- Botão Hamburguer -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Offcanvas (Menu Mobile) -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Cardápio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#container3">Localização</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#container4">Sobre Nós</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                    </ul>
+                    <a href="https://wa.me/559999999999" target="_blank" class="whatsapp-btn mt-3">Peça no WhatsApp</a>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
@@ -62,19 +95,17 @@
 
             <div id="container4">
                 <img src="imagens/identidade_visual/padaria.jpg" alt="Foto do Estabelecimento">
-                <h1>Quem Somos</h1>
-                <p>Nossa padaria nasceu com a missão de oferecer muito mais do que pães e doces: queremos proporcionar experiências que tragam aconchego e sabor para o dia a dia. Cada receita é preparada com ingredientes frescos e selecionados, unindo tradição artesanal e dedicação em cada detalhe.</p>
-
-                <p>Aqui, acreditamos que a mesa é um lugar de encontros e boas memórias. Por isso, buscamos criar um ambiente acolhedor, onde amigos se reúnem, famílias compartilham momentos e cada cliente encontra um espaço para fazer uma pausa e aproveitar o melhor da vida.</p>
-
-                <p>Combinamos o sabor caseiro com o cuidado no atendimento, sempre prezando pela qualidade e pelo carinho no preparo. Essa é a essência da nossa padaria: ser parte das suas manhãs, tardes e encontros especiais, levando sempre um pedacinho de tradição e afeto a cada visita.</p>
+                <article>
+                    <h1>Sobre Nós</h1>
+                    <p>Nossa padaria nasceu com a missão de oferecer muito mais do que pães e doces: queremos proporcionar experiências que tragam aconchego e sabor para o dia a dia. Cada receita é preparada com ingredientes frescos e selecionados, unindo tradição artesanal e dedicação em cada detalhe.</p>
+                    <p>Aqui, acreditamos que a mesa é um lugar de encontros e boas memórias. Por isso, buscamos criar um ambiente acolhedor, onde amigos se reúnem, famílias compartilham momentos e cada cliente encontra um espaço para fazer uma pausa e aproveitar o melhor da vida.</p>
+                    <p>Combinamos o sabor caseiro com o cuidado no atendimento, sempre prezando pela qualidade e pelo carinho no preparo. Essa é a essência da nossa padaria: ser parte das suas manhãs, tardes e encontros especiais, levando sempre um pedacinho de tradição e afeto a cada visita.</p>
+                </article>
             </div>
         </section>
     </main>
     <footer>
 
     </footer>
-
-
 </body>
 </html>
