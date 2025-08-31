@@ -475,12 +475,12 @@ footer > small > a{
     font-size: 0.8em;
     }
     .produtosdestaque{
-        width: 280px;
-        height: 340px;
+        width: 300px;
+        height: 360px;
         font-size: 0.9em;
     }
     .produtosdestaque > img{
-        width: 280px;
+        width: 300px;
         height: 180px;
     }
     
@@ -506,6 +506,9 @@ footer > small > a{
         font-size: 0.9em;
     }
 
+    footer{
+        font-size: 0.8em;
+    }
 }
 
 
