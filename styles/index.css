@@ -188,9 +188,9 @@ section#centralizador{
 #container2 > h1{
     margin-top: 20px;
     text-align: center;
-    font-size: 1.8em;
+    font-size: 2em;
     padding: 20px;
-    color: #201008
+    color: var(--cor4)
 }
 
 #container2 > p{
@@ -296,8 +296,9 @@ section#centralizador{
     padding: 20px;
     gap: 30px; 
     background-color: var(--cor0);
-    max-width: 900px;
+    max-width: 945px;
     min-height: 300px;
+    border-radius: 0 0 20px 20px;
 }
 
 #container4 > img {
@@ -316,10 +317,71 @@ section#centralizador{
 }
 
 #container4 > article > h1{
+    color: var(--cor4);
     font-size: 2em;
     text-align: center;
 }
 
+
+#container5 > h1{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.9em;
+    padding: 20px;
+    color: var(--cor4)
+}
+
+#container5 > p{
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+    padding: 5px;
+    max-width: 520px;
+    margin-bottom: 17px;
+    color: var(--p);
+    margin: 0 10px 10px;
+}
+
+#container5 > #contato{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#container5 > #contato > .meiosdecontato > p{
+    color: var(--p)
+}
+.meiosdecontato{
+    background-color: var(--cor0);
+    margin: 10px;
+    width: 300px;
+    height: 270px;
+    text-align: center;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.075);
+    transition: transform 0.3s ease;
+    transition: 0.3s;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+.meiosdecontato:hover{
+    transform: translateY(-5px);
+}
+.meiosdecontato > img{
+    margin: 25px;
+    width: 60px;
+    margin-bottom: 35px;
+}
+
+.meiosdecontato > h2{
+    color: var(--cor3);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.meiosdecontato > .botao{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 
