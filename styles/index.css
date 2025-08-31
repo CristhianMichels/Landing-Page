@@ -336,7 +336,6 @@ section#centralizador{
     text-align: center;
     font-size: 1em;
     padding: 5px;
-    max-width: 520px;
     margin-bottom: 17px;
     color: var(--p);
     margin: 0 10px 10px;
@@ -383,7 +382,29 @@ section#centralizador{
     margin-bottom: 10px;
 }
 
+footer{
+    margin-top: 50px;
+    background-color: var(--cor0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
 
+footer > p{
+    margin: 10px;
+}
+
+footer > small{
+    display: block;
+    font-size: 0.85em;   
+    color: #666;   
+}
+
+footer > small > a{
+    color: #666; 
+}
 
 /* Responsividade */
 @media (min-width: 1071px) { /*sumir itens navbar*/
