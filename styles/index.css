@@ -11,8 +11,6 @@
 }
 
 
-
-
 *{
     margin: 0;
     padding: 0;
@@ -177,7 +175,7 @@ header > nav{
     background: var(--cor2);
 }
 
-section#centralizador{
+section.centralizador{
     margin: auto;
     align-items: center;
 }
@@ -297,7 +295,7 @@ section#centralizador{
     gap: 30px; 
     background-color: var(--cor0);
     max-width: 945px;
-    min-height: 300px;
+    min-height: 400px;
     border-radius: 0 0 20px 20px;
 }
 
@@ -381,6 +379,7 @@ section#centralizador{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 
 footer{
     margin-top: 50px;
@@ -468,9 +467,6 @@ footer > small > a{
 
 @media (max-width: 890px) {
  /*----Container2-------*/
-    #container2 > h1{
-    font-size: 1.3em;
-    }
     #container2 > p{
     font-size: 0.8em;
     }

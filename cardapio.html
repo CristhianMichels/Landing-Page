@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="styles/index.css">
+  <style>
+    :root{
+    --cor0: #e4ded1;
+    --cor1: #d8cfc4;
+    --cor2: #734337;
+    --cor3: #542A14;
+    --cor4: #381c0d;
+    --p: rgba(14, 13, 13, 0.932);
+    }
+
+    .menu-container {
+        padding: 40px;
+    }
+    .filter-btns {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .filter-btns input {
+        display: none; /* esconde os radios */
+    }
+    .filter-btns label {
+        cursor: pointer;
+        display: inline-block;
+        margin: 5px;
+        padding: 8px 16px;
+        border: 1px solid var(--cor4);
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    .filter-btns label:hover {
+        background-color: var(--cor2);
+        color: white;
+    }
+    .filter-btns input:checked + label {
+        background-color: var(--cor3);
+        color: white;
+    }
+    .cardapio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    .cardapio-item {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        background-color: #e4ded1;
+    }
+    .cardapio-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .cardapio-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+    .cardapio-item h5 {
+        margin: 10px 0 5px;
+    }
+    .cardapio-item p {
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+    section.centralizador{
+    max-width: 900px;
+    }
+    main > h1{
+        margin: 0px 30px 30px 30px;
+        text-align: center;
+        color: var(--cor4);
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-custom sticky-top px-3">
+        <h1>Modelo</h1>
+        <div class="desktop-menu">
+            <ul class="navbar-nav gap-4 flex-row">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#container3">Localização</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#container4">Sobre Nós</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#container5">Contato</a></li>
+            </ul>
+        </div>
+        <a href="https://wa.me/559999999999" target="_blank" class="whatsapp-btn desktop-menu ms-3">Peça no WhatsApp</a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#container3">Localização</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#container4">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#container5">Contato</a></li>
+            </ul>
+            <a href="https://wa.me/559999999999" target="_blank" class="whatsapp-btn mt-3">Peça no WhatsApp</a>
+            </div>
+        </div>
+        </nav>
+    </header>
+
+    <main class="menu-container">
+        <h1>Cardápio</h1>
+        <section class="centralizador">
+            <!-- Botões de Filtro -->
+            <div class="filter-btns">
+            <input type="radio" name="filtro" id="todos" checked>
+            <label for="todos" onclick="filterItems('todos')">Todos</label>
+            <input type="radio" name="filtro" id="doces">
+            <label for="doces" onclick="filterItems('doces')">Doces</label>
+            <input type="radio" name="filtro" id="cafe">
+            <label for="cafe" onclick="filterItems('cafe')">Café da manhã</label>
+            <input type="radio" name="filtro" id="frios">
+            <label for="frios" onclick="filterItems('frios')">Frios</label>
+            </div>
+            <!-- Grid de Itens -->
+            <div class="cardapio-grid" id="cardapioGrid">
+            <!-- DOCES -->
+            <div class="cardapio-item doces">
+                <img src="imagens/produtos/doces/bolochocolate.png" alt="Bolo de Chocolate">
+                <h5>Bolo de Chocolate</h5>
+                <p>R$ 15,00</p>
+            </div>
+            <div class="cardapio-item doces">
+                <img src="imagens/produtos/doces/sonho.png" alt="Sonho">
+                <h5>Sonho</h5>
+                <p>R$ 7,00</p>
+            </div>
+            <div class="cardapio-item doces">
+                <img src="imagens/produtos/doces/brigadeiro.png" alt="Brigadeiro">
+                <h5>Brigadeiro</h5>
+                <p>R$ 5,00</p>
+                
+            </div>
+            <!-- CAFÉ DA MANHÃ -->
+            <div class="cardapio-item cafe">
+                <img src="imagens/produtos/cafe_da_manha/cafecompao.png" alt="Café com Pão">
+                <h5>Café com Pão</h5>
+                <p>R$ 8,00</p>
+            </div>
+            <div class="cardapio-item cafe">
+                <img src="imagens/produtos/cafe_da_manha/cestadecafe.png" alt="Cesta Café">
+                <h5>Cesta Café</h5>
+                <p>R$ 20,00</p>
+            </div>
+            <div class="cardapio-item cafe">
+                <img src="imagens/produtos/cafe_da_manha/croassaint.png" alt="Croissant">
+                <h5>Croissant</h5>
+                <p>R$ 6,00</p>
+            </div>
+            <!-- FRIOS -->
+            <div class="cardapio-item frios">
+                <img src="imagens/produtos/frios/queijo.png" alt="Queijo Mussarela">
+                <h5>Queijo Mussarela</h5>
+                <p>R$ 12,00</p>
+            </div>
+            <div class="cardapio-item frios">
+                <img src="imagens/produtos/frios/presunto.png" alt="Presunto">
+                <h5>Presunto</h5>
+                <p>R$ 10,00</p>
+            </div>
+            <div class="cardapio-item frios">
+                <img src="imagens/produtos/frios/salame.png" alt="Salame">
+                <h5>Salame</h5>
+                <p>R$ 15,00</p>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Padaria Modelo — Todos os direitos reservados.</p>
+        <small>
+        Site desenvolvido por <a href="https://github.com/CristhianMichels" target="_blank">Cristhian Post Michels</a>
+        </small>
+    </footer>
+
+    <script src="js/fecharoffcanvas.js"></script>
+    <script>
+        function filterItems(category) {
+            const items = document.querySelectorAll('.cardapio-item');
+            items.forEach(item => {
+                if (category === 'todos' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Marca o botão de filtro correspondente
+            const radio = document.getElementById(category);
+            if (radio) {
+                radio.checked = true;
+            } else {
+                document.getElementById('todos').checked = true;
+            }
+        }
+
+        // Ao carregar a página, pega o parâmetro da URL
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const categoria = params.get('categoria') || 'todos';
+            filterItems(categoria);
+        });
+    </script>
+</body>
+</html>
